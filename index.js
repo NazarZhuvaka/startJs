@@ -1,1 +1,2 @@
-const fisrtConst = "Hellom"
+let first = "Hello , Google";
+console.log(first);
