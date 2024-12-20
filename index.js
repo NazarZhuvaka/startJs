@@ -21,5 +21,21 @@ num += 11;
 num -= 11;
 num *= 11;
 num /= 11;
-num++
-num--
+num++;
+num--;
+
+const userNumber = Number(prompt("Введіть число:"));
+alert(Math.pow(userNumber, 2));
+
+const firstNumber = Number(prompt("Введіть перше число:"));
+const secondNumber = Number(prompt("Введіть друге число:"));
+alert((firstNumber + secondNumber) / 2);
+
+const userTime = Number(prompt("Введіть кількість хвилин:"));
+alert(userTime * 60);
+
+const greeting = "Hello, ";
+let userName;
+userName = prompt("Вкажіть Ваше ім'я:");
+alert(greeting + userName + "!");
+3;
