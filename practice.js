@@ -49,10 +49,59 @@
 
 */
 
-// let user_name = prompt("Вкажість своє ім'я")
+// function firstFunc(number) {
+//     return number + 10
+// }
 
-function getName(user_name) {
-  console.log("Привіт " + user_name);   
-}
+// function secFunc(num1, num2) {
+//     const result = num1 + num2
+//     return result
+// }
 
-getName(prompt("Вкажість своє ім'я"));
+// const result2 = firstFunc(secFunc(3, 5))
+// console.log(result2)
+
+
+// Види функцій     
+
+/*
+    <=========== Існує три види функцій ============>
+
+        1. Об'явлена функція --> Function Declaration
+
+            function functionName(param1, param2){
+                body of func
+            }
+            виклик функції ->
+                 functionName(param1, param2)
+
+            hoisting - оголошення функції піднімається до верхньої частини коду
+                == МОЖЕМ ВИКЛИКАТИ В БУДЬ-ЯКОМУ МІСЦІ КОДУ == 
+
+
+        2. Функціональний вираз --> Function Expresssion (анонімна функція)
+
+            const functionName = function(param1 , param2 , ..) {
+                function`s body
+            }
+            виклик функції ->
+                 functionName(param1, param2)
+            
+            hoisting НЕ відбувається
+
+            == НЕ можем викликликати ДО об'явою функції ==
+
+
+        3. Стрілкові функції --> Arrow function
+
+            const functionName = (param1, param2 , ..) => {
+                body of function    
+            }
+
+            виклик функції ->
+                 functionName(param1, param2)
+
+            hoisting НЕ відбувається
+
+            == НЕ можем викликликати ДО об'явою функції ==
+*/  
