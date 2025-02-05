@@ -92,7 +92,7 @@ function Car(
             }
         }
 
-        this.deaccelerate= function(speedPerHour) {
+        this.deaccelerate = function(speedPerHour) {
             if(this.speed - speedPerHour < 0){
                 return this.speed;
             } else {
