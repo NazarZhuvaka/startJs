@@ -102,7 +102,7 @@
 
 // this - в глобальній області видимості посилається на Window (вікно браузера)
 
-'use strict';
+// 'use strict';
 // строге виконання коду strict mode
 
 /*
@@ -179,6 +179,76 @@
 
 */
 
+'use strict';
+
+// Operations
+
+// function sum(a, b){
+//   return a + b
+// }
+
+// sum(3,4) // 7
+
+// sum(1, 2, 5, 10) // 3
 
 
+// rest operator (rest - залишок)
+
+// function sum(a, b, ...arrayOfRestArgs){
+//   console.log(arrayOfRestArgs);
+//   return a + b
+// }
+
+// console.log(sum(1, 2, 5, 10));
+
+// const arrowFunc = (...arrayOfRestArgs) => {
+//   // let sum = 0
+
+//   // for(let i = 0; i < arrayOfRestArgs.length; i++){
+//   //   sum += arrayOfRestArgs[i]
+//   // }
+
+//   return arrayOfRestArgs.reduce((accumulator, item) => accumulator + item , 0)
+//   // accumulator - де накопичуємо
+//   // item(currentValue) - елементи масиву
+// }
+
+// const arrowFunc = (...arrayOfRestArgs) => arrayOfRestArgs.reduce((accumulator, item) => accumulator + item , 0)
+
+// console.log(arrowFunc(1, 5, 10 ,342));
+
+
+
+// spread operator (розпокувати)
+// [] --> .., .., ..,
+
+// const number = [1, 2, 3, 4, 5];
+
+// function sum (a, b, ...restArr){
+//   console.log(restArr);
+//   return a + b
+// }
+
+// // console.log(sum(number[0], number[1], number[2], number[3], number[4]));
+
+// console.log(sum(...number)); // spread operator
+
+// розпакували всі значення масиву numbers у виклик функції sum
+
+// Як розрізняти rest і spread оператор
+
+/*
+  1. Якщо оператор стоїть в аргументах функції, то це rest - він просто бере і збирає всі залишки параметрів
+
+  2. Якщо ми використовуємо оператор на масиві, то це spread - він бере і розбиває масив на купу елементів
+*/
+
+// const numbersMath = [2, 3, 1, 5, 6];
+
+// const copyArray = [...numbersMath]; // spread operator --> робить поверхневі копії 
+
+// const array1 = [1, 2, 3, 4, 5];
+// const array2 = [10, 11, 12, 13, 14, 15];
+
+// const array3 = [...array1, ...array2];
 
