@@ -130,14 +130,16 @@
 //   }],
 
 //   showArticles: function() {
-//     this.articles.forEach((item, index) => {
+//     this.articles.forEach(function (item, index){
 //       console.log(`${index} --> ${item.author}`);
 //     })
+//     // this.articles.forEach((item, index) => {
+//     //   console.log(`${index} --> ${item.author}`);
+//     // })
 //   }
 // }
 
 // newspaper.showArticles()
-
 
 //
 
@@ -252,3 +254,24 @@
 
 // const array3 = [...array1, ...array2];
 
+
+
+// Вкладенні цикли
+
+// for (let i = 1; i <= 5; i++){ // число для якого ми виводимо таблицю множення
+//   for (let j = 1; j <= 5; j++) { // 1*1, 1*2 , 1*3, 1*4, 1*5 - числа на які ми множисо число із зовнішнього циклу
+//     console.log(`${i}x ${j} = ${i*j}`);
+//   }
+// }
+
+// const numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+// let sum = 0
+
+// for (let i = 0; i < numbers.length; i++) { // контролює масив який ми переглядаємо
+//   for(let j = 0; j < numbers[i].length; j++) { // сумує всі елменти поточного вкладеного масиву
+//     sum += numbers[i][j] // отримуємо доступ до поточного елементу просматріваємого вкладеного масиву
+//   }
+// }
+
+// console.log(sum);
