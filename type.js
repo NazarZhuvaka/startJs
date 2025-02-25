@@ -34,9 +34,9 @@
 
 
 // function checkSpam(str) {
-//     word = str.toLowerCase()
+//     const word = str.toLowerCase()
 
-//     if (str.includes('xxx') | word.includes('viagra')){
+//     if (word.includes('xxx') || word.includes('viagra')){
 //         return true
 //     } else {
 //         return false
@@ -46,16 +46,21 @@
 // console.log(checkSpam('ad xxxxxxxxx'));
 
 
-function checkStr(str) {
-    word = Array.from(str).reverse().join('').toLowerCase()
+// function checkStr(str) {
+//     // const word = Array.from(str).reverse().join('').toLowerCase()
 
-    // if(str.toLowerCase() === word) {    
-    //     return true
-    // } else{
-    //     return false
-    // }
-    // result = str.toLowerCase() === word ? true : false
-    return str.toLowerCase() === word ? true : false
-}
+//     const word = str.toLowerCase().split('').reverse().join('')
 
-console.log(checkStr("Anasdasdna"));
+//     // if(str.toLowerCase() === word) {    
+//     //     return true
+//     // } else{
+//     //     return false
+//     // }
+//     // result = str.toLowerCase() === word ? true : false
+//     // return str.toLowerCase() === word ? true : false
+    
+//     return word === str
+// }
+
+// console.log(checkStr("Anasdasdna"));
+

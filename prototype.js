@@ -129,13 +129,21 @@
 //     text: "lorem"
 //   }],
 
-//   showArticles: function() {
-//     this.articles.forEach(function (item, index){
-//       console.log(`${index} --> ${item.author}`);
-//     })
+//   // showArticles: function() {
+//   //   this.articles.forEach(function (item, index){
+//   //     console.log(`${index} --> ${item.author}`);
+//   //   })
 //     // this.articles.forEach((item, index) => {
 //     //   console.log(`${index} --> ${item.author}`);
 //     // })
+
+//     showArticles: () => {
+//       this.articles.forEach((item, index) => {
+//           console.log(`${index} --> ${item.author}`);
+//     });
+  
+  
+  
 //   }
 // }
 
