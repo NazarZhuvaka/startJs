@@ -40,255 +40,255 @@
 
 // // */
 
-// // const MIN_ZP = 2101
-// // const WORK_DAYS = 21
-// // const MIN_RATE = MIN_ZP / WORK_DAYS
+// const MIN_ZP = 2101
+// const WORK_DAYS = 21
+// const MIN_RATE = MIN_ZP / WORK_DAYS
 
-// // class Worker {
-// //     constructor(name, lastName, rate = MIN_RATE, days = WORK_DAYS, coef) {
-// //         this.name = name;
-// //         this.lastName = lastName;
-// //         this.rate = Number(rate.toFixed(2));
-// //         this.days = days;
-// //         this.coef = coef
-// //     }
+class Worker {
+    constructor(name, lastName, rate = MIN_RATE, days = WORK_DAYS, coef) {
+        this.name = name;
+        this.lastName = lastName;
+        this.rate = Number(rate.toFixed(2));
+        this.days = days;
+        this.coef = coef
+    }
 
-// //     /*
-// //         Сеттер - метод для встановлення значення
-// //         Геттре - метож для отриманння значення
+    /*
+        Сеттер - метод для встановлення значення
+        Геттре - метож для отриманння значення
 
-// //     */
+    */
 
-// //     set days(newValue) {
-// //         if(newValue < 0 || newValue > 31) {
-// //             throw RangeError('Days must be in 0 to 31')
-// //         }
+    set days(newValue) {
+        if(newValue < 0 || newValue > 31) {
+            throw RangeError('Days must be in 0 to 31')
+        }
 
-// //         this._days = newValue
-// //     }
+        this._days = newValue
+    }
 
-// //     get days() {
-// //         return this._days;
-// //     }
+    get days() {
+        return this._days;
+    }
 
-// //     set coef(newValue) {
-// //         if(newValue < 0) {
-// //             throw RangeError("Coefficient must be a positive")
-// //         }
+    set coef(newValue) {
+        if(newValue < 0) {
+            throw RangeError("Coefficient must be a positive")
+        }
 
-// //         this._coef = newValue
-// //     }
+        this._coef = newValue
+    }
 
-// //     get coef() {
-// //         return this._coef;
-// //     }
+    get coef() {
+        return this._coef;
+    }
 
-// //     set rate(newValue) { // назва сеттеру - приватного поля БЕЗ знаку нижнього підкреслення
-// //         if(newValue) {
-// //             throw new RangeError('Rate must be a positive number')
-// //         }
-// //         if(typeof newValue !== 'number') {
-// //             throw TypeError('Rate must be a number')
-// //         }
+    set rate(newValue) { // назва сеттеру - приватного поля БЕЗ знаку нижнього підкреслення
+        if(newValue) {
+            throw new RangeError('Rate must be a positive number')
+        }
+        if(typeof newValue !== 'number') {
+            throw TypeError('Rate must be a number')
+        }
 
-// //         // АЛЕ в середені сеттеру ми працюємо з приватним полем
-// //         this._rate = newValue;
+        // АЛЕ в середені сеттеру ми працюємо з приватним полем
+        this._rate = newValue;
     
-// //     } 
+    } 
 
-// //     get rate() { // назва геттеру - приватного поля БЕЗ знаку нижнього підкреслення
-// //         // АЛЕ в середені геттеру ми працюємо з приватним полем
-// //         return this._rate;
-// //     }
+    get rate() { // назва геттеру - приватного поля БЕЗ знаку нижнього підкреслення
+        // АЛЕ в середені геттеру ми працюємо з приватним полем
+        return this._rate;
+    }
 
-// //     // getRate() { // геттер
-// //     //     return this._rate
-// //     // }
+    // getRate() { // геттер
+    //     return this._rate
+    // }
 
-// //     // setRate(value) { // сеттер
-// //     //     if (typeof value !== 'number') {
-// //     //         throw new TypeError('Rate must be number')
-// //     //     }
+    // setRate(value) { // сеттер
+    //     if (typeof value !== 'number') {
+    //         throw new TypeError('Rate must be number')
+    //     }
         
-// //     //     if (value < 0) {
-// //     //         throw new RangeError('Rate must be a positive number')
-// //     //     }
+    //     if (value < 0) {
+    //         throw new RangeError('Rate must be a positive number')
+    //     }
 
-// //     //     this._rate = value
-// //     // }
+    //     this._rate = value
+    // }
 
-// //     getFullSalary() {
-// //         if (this.coef) {
-// //             return this.rate * this.days * this.coef
-// //         } else {
-// //             return this.rate * this.days
-// //         }
-// //     }
-// // }
+    getFullSalary() {
+        if (this.coef) {
+            return this.rate * this.days * this.coef
+        } else {
+            return this.rate * this.days
+        }
+    }
+}
 
-// // const worker1 = new Worker('Alex', 'Doe', 178 , 23);
-// // const worker2 = new Worker('Jon', 'Doe', 120 , 31);
-
-
-// // /*
-// //     В середині класу , геттери та сеттери працюють з приватними полями,
-// //      а при звернені ззовні ми працюємо з геттерами і сеттерами
-// // */
-
-// // class Test {
-// //     constructor(value1, value2) {
-// //         this.key1 = value1
-// //         this.value2 = value2
-// //     }
-
-// //     method() {
-// //         // тіло методу
-// //     }
-
-// //     // Варіант 2 для оголошення статичного методу (більш розповсюджений)
-// //     static myStaticMethod(param){
-// //         // тіло функції 
-// //         console.log(param);
-// //     }
-// // }
-// // Статичні методи - методи, якими ми можемо скористатися не відбудовуючи екземпляр класу
-// // Всередині статичних методів ми не використовуємо this
+const worker1 = new Worker('Alex', 'Doe', 178 , 23);
+const worker2 = new Worker('Jon', 'Doe', 120 , 31);
 
 
-// // Варіант 1 для оголошення статичного методу
+/*
+    В середині класу , геттери та сеттери працюють з приватними полями,
+     а при звернені ззовні ми працюємо з геттерами і сеттерами
+*/
 
-// // Test.myStaticMethod = function(param) {
-// //     // тіло функції
-// //     console.log(param);
-// // }
+class Test {
+    constructor(value1, value2) {
+        this.key1 = value1
+        this.value2 = value2
+    }
 
-// // Test.myStaticMethod('123')
+    method() {
+        // тіло методу
+    }
 
-
-// // const obj1 = new Test('test1' , 'test2'); // створення нового екземпляру класу Test
-// // obj1.method();
-
-
-// // class RangeValidator{
-// //     constructor(from, to) {
-// //         this.to = to;
-// //         this.from = from;
-// //     }
-
-// //     set from(newValue) {
-// //         if (newValue < 0 || newValue > this._to){
-// //             throw new RangeError("From must be positive")
-// //         } else if (typeof newValue !== 'number') {
-// //             throw new TypeError("From must be a number")
-// //         }
-// //         this._from = newValue;
-// //     }
-
-// //     get from() {
-// //         return this._from
-// //     }
-
-// //     set to(newValue){
-// //         if(newValue < this._from) {
-// //             throw new RangeError("To must be smaller, than From")
-// //         } else if (typeof newValue !== 'number') {
-// //             throw new TypeError("To must be a number")
-// //         }
-// //         this._to = newValue;
-// //     }
-
-// //     get to(){
-// //         return this._to;
-// //     }
-
-// //     getRange() {
-// //         let result = []
-// //         for(let i = this.from; i <= this.to; i++){
-// //             result.push(i)
-// //         }
-// //         return result;
-// //     }
-// // }
-
-// // const obj = new RangeValidator(2, 5);
-// // console.log(obj.getRange());
-
-// // class Animal {
-// //     constructor(nickname, color) {
-// //         this.nickname = nickname
-// //         this.color = color
-// //     }
-
-// //     eat() {
-// //         return `${this.nickname} is eating`;
-// //     }
-// // }
-
-// // // const anim = new Animal('black', 'Tuzik');
-
-// // // клас Собаки розширює клас Тварини (наслідує цей клас)
-// // class Dog extends Animal {
-// //     constructor(nickname, color){
-// //         // виклик консруктора батьківського класу
-// //         super(nickname, color)
-// //     }
-
-// //     gav(){
-// //         return `${this.nickname} gav-gav-gav`;
-// //     }
-// // }
-
-// // const dog = new Dog('Tuzik', 'grey') 
+    // Варіант 2 для оголошення статичного методу (більш розповсюджений)
+    static myStaticMethod(param){
+        // тіло функції 
+        console.log(param);
+    }
+}
+// Статичні методи - методи, якими ми можемо скористатися не відбудовуючи екземпляр класу
+// Всередині статичних методів ми не використовуємо this
 
 
-// class User{
-//     constructor(name, surname, age) {
-//         this.name = name;
-//         this.surname = surname;
-//         this.age = age;
-//     }
+// Варіант 1 для оголошення статичного методу
 
-//     getFullName() {
-//         return `${this.name} and ${this.surname}`
-//     }
-// }
+Test.myStaticMethod = function(param) {
+    // тіло функції
+    console.log(param);
+}
 
-// class Moderator extends User{
-//     constructor(name, surname, age) {
-//         super(name, surname, age);
-//     }
-
-//     createPost(text) {
-//         console.log('Post success created');
-//     }
-
-//     deletePost(id) {
-//         console.log('Post success delete');
-//     }
-// }
+Test.myStaticMethod('123')
 
 
-// class Admin extends Moderator{
-//     constructor(name, surname, age, prefix) {
-//         super(name, surname, age);
-//         this.prefix = prefix;
-//     }
-
-//     makeModerator(userID) {
-//         console.log('Moder successfully set');
-//     }
-
-//     deleteModerator(userID){
-//         console.log('Moder successfully del');
-//     }
-// }
+const obj1 = new Test('test1' , 'test2'); // створення нового екземпляру класу Test
+obj1.method();
 
 
-// // function reduce(accumulator, item) {
-//     //     return (accumulator + item) / arr.length
-//     // }
+class RangeValidator{
+    constructor(from, to) {
+        this.to = to;
+        this.from = from;
+    }
+
+    set from(newValue) {
+        if (newValue < 0 || newValue > this._to){
+            throw new RangeError("From must be positive")
+        } else if (typeof newValue !== 'number') {
+            throw new TypeError("From must be a number")
+        }
+        this._from = newValue;
+    }
+
+    get from() {
+        return this._from
+    }
+
+    set to(newValue){
+        if(newValue < this._from) {
+            throw new RangeError("To must be smaller, than From")
+        } else if (typeof newValue !== 'number') {
+            throw new TypeError("To must be a number")
+        }
+        this._to = newValue;
+    }
+
+    get to(){
+        return this._to;
+    }
+
+    getRange() {
+        let result = []
+        for(let i = this.from; i <= this.to; i++){
+            result.push(i)
+        }
+        return result;
+    }
+}
+
+const obj = new RangeValidator(2, 5);
+console.log(obj.getRange());
+
+class Animal {
+    constructor(nickname, color) {
+        this.nickname = nickname
+        this.color = color
+    }
+
+    eat() {
+        return `${this.nickname} is eating`;
+    }
+}
+
+// const anim = new Animal('black', 'Tuzik');
+
+// клас Собаки розширює клас Тварини (наслідує цей клас)
+class Dog extends Animal {
+    constructor(nickname, color){
+        // виклик консруктора батьківського класу
+        super(nickname, color)
+    }
+
+    gav(){
+        return `${this.nickname} gav-gav-gav`;
+    }
+}
+
+// const dog = new Dog('Tuzik', 'grey') 
+
+
+class User{
+    constructor(name, surname, age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
+    getFullName() {
+        return `${this.name} and ${this.surname}`
+    }
+}
+
+class Moderator extends User{
+    constructor(name, surname, age) {
+        super(name, surname, age);
+    }
+
+    createPost(text) {
+        console.log('Post success created');
+    }
+
+    deletePost(id) {
+        console.log('Post success delete');
+    }
+}
+
+
+class Admin extends Moderator{
+    constructor(name, surname, age, prefix) {
+        super(name, surname, age);
+        this.prefix = prefix;
+    }
+
+    makeModerator(userID) {
+        console.log('Moder successfully set');
+    }
+
+    deleteModerator(userID){
+        console.log('Moder successfully del');
+    }
+}
+
+
+// function reduce(accumulator, item) {
+    //     return (accumulator + item) / arr.length
+    // }
     
-//     // console.log(arr.reduce(reduce, 0));
-//     // arr.reduce((accumulator, item) => (accumulator + item) / arr.length)
-// const arr = [90, 85, 70 , 78]
-// console.log(arr.reduce((accumulator, item) => (accumulator + item) / arr.length, 0));
+    // console.log(arr.reduce(reduce, 0));
+    // arr.reduce((accumulator, item) => (accumulator + item) / arr.length)
+const arr = [90, 85, 70 , 78]
+console.log(arr.reduce((accumulator, item) => (accumulator + item) / arr.length, 0));
