@@ -13,13 +13,13 @@ console.log(intValue(8.11212));
 
 // Task 3
 
-// const userName = prompt('Enter your name: ')
+const userName = prompt('Enter your name: ')
 
-// function makeUpperName(name) {
-//     alert(`${name} -> ${name.toUpperCase()}`)
-// }
+function makeUpperName(name) {
+    alert(`${name} -> ${name.toUpperCase()}`)
+}
 
-// makeUpperName(userName)
+makeUpperName(userName)
 
 
 // Task 4 (?)

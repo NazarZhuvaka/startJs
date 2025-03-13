@@ -1,11 +1,15 @@
 .*
 
-js
+./js
 practice.js
 object.js
 objects.js
 loops.js
 lists.js
-tryCatch,js
+tryCatch.js
+prototype.js
+type.js
+OOP.js
+princeps.js
 
 !.gitignore
