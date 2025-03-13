@@ -1,9 +1,11 @@
 .*
 
+js
 practice.js
 object.js
 objects.js
 loops.js
 lists.js
+tryCatch,js
 
 !.gitignore

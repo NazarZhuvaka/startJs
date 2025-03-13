@@ -1,91 +1,65 @@
-// // --------- Task 1 -----------
+// Task 1
 
-// for (let i = 1; i < 10; i++) {
-//   let result = i ** 2;
-//   console.log(result);
+const textValue = '1234';
+textValue.split('').reverse().join('');
+
+// Task 2
+
+function intValue(num) {
+    return num.toFixed()
+}
+
+console.log(intValue(8.11212));
+
+// Task 3
+
+// const userName = prompt('Enter your name: ')
+
+// function makeUpperName(name) {
+//     alert(`${name} -> ${name.toUpperCase()}`)
 // }
 
-// // --------- Task 2 -----------
+// makeUpperName(userName)
 
-// function isCorrect() {
-//   const correctPass = "qwerty1234";
 
-//   while (true) {
-//     const userPass = prompt("Enter your password: ");
+// Task 4 (?)
 
-//     if (userPass === correctPass){
-//         console.log("Ви успішно увійшли в систему !");
-//         break
-//     }
-//   }
-// }
 
-// isCorrect();
+function changeDate(date) {
+    const parts = date.split("-").reverse();
 
-// // --------- Task 3 -----------
+    const firstElement = parts.shift()
+    const lastElement = parts.pop()
 
-// let result = 0;
+    parts.push(firstElement, lastElement)
+    return parts.join('.')
+}
 
-// for (let i = 1; i < 100; i++) {
-//     result = result + i;
-//     console.log(result);
-// }
+console.log(changeDate('2021-22-09'));
 
-// // --------- Task 4 -----------
 
-// for(let i = 10; i < 50; i++) {
-//     if (i % 5 === 0) {
-//         console.log(i);
-//     }
-// }
+// Task 5
 
-// // --------- Task 5 -----------
+function isEqual(firstSrt, secStr) {
+    if(firstSrt.toLowerCase() === secStr.toLowerCase()){
+        return true
+    }
+    return false
+}
 
-// function doTriangle(size) {
-//   let star = "";
+console.log(isEqual('pApA', 'papa'));
 
-//   for (let i = 0; i < size; i++) {
-//     star += "*";
-//     console.log(star);
-//   }
-// }
+// Task 6
 
-// doTriangle(7);
+function sum(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new TypeError('А та B мають бути числами')
+    }
+    return a + b
+}
 
-// // --------- Task 6 -----------
-
-// function doSquare(size) {
-//   for (let i = 0; i < size; i++) {
-//     let row = "";
-
-//     for (let j = 0; j < size; j++) {
-//       if (i === 0 || i === size - 1 || j === 0 || j === size - 1 || i === j) {
-//         row += "*";
-//       } else {
-//         row += " "; 
-//       }
-//     }
-//     console.log(row);
-//   }
-// }
-
-// doSquare(16);
-
-// // --------- Task 7* -----------
-
-// function doSquare(size) {
-//   for (let i = 0; i < size; i++) {
-//     let row = '';
-
-//     for (let j = 0; j < size; j++) {
-//         if (i === 0 || i === size - 1 || j === 0 || j === size - 1 || i + j === size - 1) {
-//             row += '*';
-//         } else {
-//             row += ' ';
-//         }
-//     }
-//     console.log(row);
-// }
-// }
-
-// doSquare(16);
+try {
+    sum(1, null)
+} catch (error) {
+    console.log(error);
+}

@@ -17,7 +17,7 @@
 
 // function sum(a, b) {
 //     if (a < 0 || b < 0) {
-//         // маємо "викинути" помидку
+//         // маємо "викинути" помилку
 //         const error = new RangeError('Якесь з чисел менше 0')
 //         // console.log(error);
 //         throw error // return, тільки для помилки
