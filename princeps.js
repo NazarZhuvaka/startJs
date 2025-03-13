@@ -245,3 +245,106 @@ console.log(scaleWidthValue);
 const {brightNess, color, resolution, ...restOfMonitor} = monitor
 
 console.log(restOfMonitor);
+
+
+const user = {
+  name: 'John',
+  age: 30,
+  adress: {
+    city: 'Kyiv',
+    country: 'Ukraine'
+  },
+  contacts: {
+    email: 'john.doe@gmail.com',
+    phone: '+3802932331271'
+  }
+}
+
+const {name: userName, adress:{city: userCity}, contacts:{email: userEmail, phone: userPhone}} = user;
+
+console.log(userName);
+
+
+
+/*
+
+  У джава скрипні існує три види деструктирізації
+
+    1. Деструктирізація об'єктів
+    2. Деструктирізація вхідних параметрів
+    3. Деструктирізація масивів
+
+*/
+
+const array = [1, 2, 3, 4, 5, 6];
+
+// const firstElement = array[0]; ->
+// const [firstElement, secondElement] = array;
+const [firstElement, secondElement, ...restOfArray] = array;
+
+
+
+function getFullName({firstName, lastName, age, ...restObj}) { // все інше, окрім переданих параметрів ігнорується
+  return `${firstName, lastName, age}`
+}
+
+const user2 = {
+  firstName: 'Jogn',
+  lastName: 'Doe',
+  age: 32,
+  geolocation: '43.3333 56.89789',
+  browser: 'Chrome'
+}
+
+getFullName(user2)
+
+
+
+// замикання дозволяє функція зберігати доступ до змінних, навіть коли ці функції завершують своє виконання
+
+// Замикання - здатність функції запам'ятовувавати локальну область видимості
+
+let value = 10; // глобальна область видимості
+
+function wrapper() {
+  let value = 20; // локальна область видимості
+  console.log('WRAPPER function', value);
+
+  return function log() {
+    console.log('LOG fucction', value);
+  }
+}
+
+wrapper()
+
+const wrapperReturn = wrapper() // wrapper відробила і перестала існувати
+
+wrapperReturn() // 'LOG fucction' 20
+
+
+function counter() {
+  let i = 0;
+
+  return function () {
+    return i++ // залишається в пам'яті // i - змінна у замиканні
+  };
+}
+
+//
+
+function makeCounter() {
+  let counter = 0
+  return {
+    increment() {
+      return ++counter;
+    },
+
+    decrement() {
+      return --counter
+    }
+  }
+}
+
+const finObj = makeCounter()
+finObj.decrement()
+
